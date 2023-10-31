@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <!-- <div id="bar-chart"></div>
@@ -16,6 +17,39 @@
 
     <div class="legend" id="bar-legend"></div>
     <div class="legend" id="pie-legend"></div> -->
+    <div class="style-title">Line Chart for temperature and brightness against time</div> 
+    <canvas id="line-chart"></canvas>
+    <script>  
+ new Chart(document.getElementById("line-chart"), {
+		type : 'line',
+		data : {
+			labels :  ["2023-10-31T12:34:05Z","2023-10-31T12:33:05Z","2023-10-31T12:32:04Z","2023-10-31T12:31:04Z","2023-10-31T12:30:05Z","2023-10-31T12:29:05Z","2023-10-31T12:28:05Z","2023-10-31T12:27:04Z","2023-10-31T12:26:04Z","2023-10-31T12:25:05Z"],
+			datasets : [
+					{
+						data : [21.9,23,22,21.4,21.5,21.7,22.5,23.2,22.4,23.7],
+						label : "temperature",
+                        color: "",
+						borderColor : "#3cba9f",
+						fill : false
+					},
+                {
+                    data :[229,237,240,239,235,233,232,234,234,239],
+						label : "brightness",
+                        color:"",
+						borderColor : "#3469c2",
+						fill : false
+                }]
+		},
+		options : {
+			title : {
+				display : true,
+				text : 'Chart JS Line Chart Example'
+			}
+		}
+	});
+    </script>
+
+    <br/>
     <canvas id="myChart" width="400" height="200"></canvas>
     <script src="main.js"></script> 
 </body>
